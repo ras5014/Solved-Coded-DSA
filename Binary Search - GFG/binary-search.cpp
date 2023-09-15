@@ -9,17 +9,18 @@ using namespace std;
 // User function template for C++
 
 class Solution {
+  private:
+    int helper(int arr[], int start, int end, int k) {
+        if(start > end) return -1;
+        int mid = start + (end-start)/2;
+        if(k == arr[mid]) return mid;
+        else if(k > arr[mid]) return helper(arr, mid+1, end, k);
+        else return helper(arr, start, mid-1, k);
+    }
   public:
     int binarysearch(int arr[], int n, int k) {
         // code here
-        int start = 0, end = n-1;
-        while(start <= end) {
-            int mid = start + (end-start)/2;
-            if(k == arr[mid]) return mid;
-            else if(k > arr[mid]) start = mid+1;
-            else end = mid-1;
-        }
-        return -1;
+        return helper(arr, 0, n-1, k);
     }
 };
 
