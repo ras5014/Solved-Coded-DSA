@@ -46,9 +46,9 @@ class Solution
     int findStart(Node* slow, Node* entry) {
         Node* head = entry;
         while(slow != entry) {
+            if(slow->next == head) return head->data;
             slow = slow->next;
             entry = entry->next;
-            if(slow->next == head) return head->data;
         }
         return entry->data;
     }
