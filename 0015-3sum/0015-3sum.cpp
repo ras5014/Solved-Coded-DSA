@@ -1,6 +1,9 @@
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
+
+        // Do Two Sum and Two Sum II before doing this
+
         vector<vector<int>> ans;
         int n = nums.size();
 
