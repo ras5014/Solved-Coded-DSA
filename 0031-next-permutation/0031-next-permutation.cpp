@@ -4,7 +4,7 @@ public:
         int n = nums.size();
         int break_point = -1;
 
-
+        // Check with [2, 1, 5, 4, 3, 0, 0]
         // Finding Breaking Point
         for(int i = n-2; i >= 0; i--) {
             if(nums[i] < nums[i+1]) {
