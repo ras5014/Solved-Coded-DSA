@@ -1,23 +1,17 @@
 class Solution {
 public:
     int maxSubArray(vector<int>& nums) {
-        
         int n = nums.size();
-        int maxi = INT_MIN, curSum = 0;
-
-        // Looping through the array & adding elements to curSum
+        int curSum = 0, maxi = INT_MIN;
+        // Loop through array
         for(int i = 0; i < n; i++) {
-
-            // Keep adding element nums[i] to curSum
+            // Update curSum
             curSum += nums[i];
-
-            // update maxi
+            // Update maxi
             maxi = max(maxi, curSum);
-
-            // If curSum is less than 0, then we can't find max with it
+            // Updae curSum = 0, if curSum is -ve
             if(curSum < 0) curSum = 0;
         }
-
         return maxi;
     }
 };
