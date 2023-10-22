@@ -3,6 +3,9 @@ public:
     int majorityElement(vector<int>& nums) {
         int n = nums.size();
 
+        /* In an "n" size array there can be only 1 element which 
+         can appear more than n/2 times */
+
         // Moore's Voting Algorithm
         // Step-1 Take element & count
         int el, cnt = 0;
